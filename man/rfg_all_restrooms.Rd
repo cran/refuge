@@ -4,7 +4,8 @@
 \alias{rfg_all_restrooms}
 \title{All refuge restrooms}
 \usage{
-rfg_all_restrooms(accessible = FALSE, unisex = FALSE, verbose = TRUE)
+rfg_all_restrooms(accessible = FALSE, unisex = FALSE, verbose = TRUE,
+  tidy = FALSE)
 }
 \arguments{
 \item{accessible}{If \code{TRUE}, only returns restrooms that meet the
@@ -16,6 +17,10 @@ Defaults to \code{FALSE}.}
 
 \item{verbose}{If \code{TRUE}, prints query progress.
 Defaults to \code{TRUE}.}
+
+\item{tidy}{If \code{TRUE}, makes USA state names more consistent. The internal
+function focuses on correcting known errors and mistakes, if incorrect state
+data is supplied that cannot be corrected. Defaults to \code{FALSE}.}
 }
 \value{
 A tibble with details on all listed bathrooms.
@@ -24,11 +29,15 @@ A tibble with details on all listed bathrooms.
 All listed refuge restrooms, ordered by date added or last updated, with
 the most recent additions and updates at the top.
 }
+\details{
+Note that the API does not standardise or validate the names of
+states, cities, countries, etc, and so this data may need to be cleaned
+and organised.
+}
 \examples{
 \donttest{
 
 a <- rfg_all_restrooms(accessible = TRUE, unisex = TRUE)
 
 }
-
 }

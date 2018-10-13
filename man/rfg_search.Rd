@@ -4,12 +4,13 @@
 \alias{rfg_search}
 \title{Restroom record search}
 \usage{
-rfg_search(search, accessible = FALSE, unisex = FALSE, verbose = TRUE)
+rfg_search(search, accessible = FALSE, unisex = FALSE,
+  verbose = TRUE, tidy = FALSE)
 }
 \arguments{
 \item{search}{A string to search for. Note that the API does not accept
 wildcard searchs, searches all fields in all available records, and only
-returns exact (case-insensitive) matches.}
+returns exact (case-insensitive) whole-word matches.}
 
 \item{accessible}{If \code{TRUE}, only returns restrooms that meet the
 Americans with Disability Act standards for accessibility.
@@ -20,6 +21,10 @@ Defaults to \code{FALSE}.}
 
 \item{verbose}{If \code{TRUE}, prints query progress.
 Defaults to \code{TRUE}.}
+
+\item{tidy}{If \code{TRUE}, makes USA state names more consistent. The internal
+function focuses on correcting known errors and mistakes, if incorrect state
+data is supplied that cannot be corrected. Defaults to \code{FALSE}.}
 }
 \value{
 A tibble with all bathrooms matching your search request

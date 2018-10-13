@@ -25,15 +25,23 @@ application that seeks to provide safe restroom access for transgender,
 intersex, and gender nonconforming individuals.” The web application
 includes a public API, which this package allows access to. The API does
 not require users to sign up or use a key. For further details on the
-API or the organisation behind it, see the [API
-docs](https://www.refugerestrooms.org/api/docs/), or the [Refuge
-Restrooms homepage](https://www.refugerestrooms.org/).
+API see the [API docs](https://www.refugerestrooms.org/api/docs/), or
+the package
+[vignette](https://docs.evanodell.com/refuge/articles/introduction.html).
+For details on the organisation providing this data, check out the
+[Refuge Restrooms homepage](https://www.refugerestrooms.org/).
 
 The API does not require registration or an API key.
 
 ## Installation
 
-You can install the development version from
+To install the latest version from CRAN, use:
+
+``` r
+install.packages("refuge")
+```
+
+You can install the latest development version from
 [GitHub](https://github.com/) with:
 
 ``` r
@@ -86,7 +94,7 @@ toronto <- rfg_search("toronto", accessible = TRUE, unisex = TRUE)
 #> Retrieving page 2 of 2
 
 tibble::glimpse(toronto)
-#> Observations: 127
+#> Observations: 140
 #> Variables: 17
 #> $ id             <int> 1656, 20153, 26253, 38754, 19636, 36264, 36582,...
 #> $ name           <chr> "New College, University of Toronto", "Alumni H...
@@ -107,6 +115,9 @@ tibble::glimpse(toronto)
 #> $ changing_table <lgl> FALSE, FALSE, FALSE, FALSE, FALSE, TRUE, FALSE,...
 ```
 
+For more detailed examples, check out the
+[vignette](https://docs.evanodell.com/refuge/articles/introduction.html).
+
 ## Citing `refuge`
 
 Odell E (2018). *refuge: Locate Trans and Intersex-Friendly Toilets*.
@@ -121,7 +132,7 @@ A BibTeX entry for LaTeX users is
     title = {{refuge}: Locate Trans and Intersex-Friendly Toilets},
     author = {Evan Odell},
     year = {2018},
-    note = {R package version 0.1.0},
+    note = {R package version 0.2.0},
     doi = {10.5281/zenodo.1219900},
     url = {https://github.com/evanodell/refuge},
   }

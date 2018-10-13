@@ -4,7 +4,8 @@
 \alias{rfg_location}
 \title{Bathroom locations}
 \usage{
-rfg_location(lat, lng, accessible = FALSE, unisex = FALSE, verbose = TRUE)
+rfg_location(lat, lng, accessible = FALSE, unisex = FALSE,
+  verbose = TRUE, tidy = FALSE)
 }
 \arguments{
 \item{lat}{Location latitude}
@@ -20,6 +21,10 @@ Defaults to \code{FALSE}.}
 
 \item{verbose}{If \code{TRUE}, prints query progress.
 Defaults to \code{TRUE}.}
+
+\item{tidy}{If \code{TRUE}, makes USA state names more consistent. The internal
+function focuses on correcting known errors and mistakes, if incorrect state
+data is supplied that cannot be corrected. Defaults to \code{FALSE}.}
 }
 \value{
 A tibble with details of any and all nearby refuge bathrooms.
@@ -34,6 +39,4 @@ bathrooms, subject to other parameters.
 c <- rfg_location(lat=39, lng=-75)
 
 }
-
-
 }
