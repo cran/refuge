@@ -1,4 +1,8 @@
 
+# refuge 0.3.2
+
+* Fixed errors in `rfg_search` function.
+
 # refuge 0.3.0
 
 * Fixed test errors found on CRAN.
