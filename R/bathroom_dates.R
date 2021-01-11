@@ -17,26 +17,23 @@
 #' @export
 #'
 #' @examples
-#' \donttest{
-#' 
+#' \dontrun{
 #' q <- rfg_date("2017-11-04")
 #' }
-#' 
+#'
 rfg_date <- function(date = NULL, accessible = FALSE, unisex = FALSE,
                      updated = FALSE, verbose = TRUE, tidy = FALSE) {
   if (is.null(date)) stop("Please enter a date", call. = FALSE)
 
   date <- as.Date(date)
 
-  ada_query <- ada_function(accessible)
-
-  unisex_query <- unisex_function(unisex)
+  ada_uni <- ada_uni_function(accessible, unisex)
 
   updated_query <- ifelse(updated == TRUE, "updated=true&", "")
 
   query <- paste0(
-    base_url, "/by_date.json?", ada_query, unisex_query, updated_query,
-    "day=", trimws(format(date, "%e")), "&month=", format(date, "%m"),
+    base_url, "/by_date.json?", ada_uni, updated_query,
+    "&day=", trimws(format(date, "%e")), "&month=", format(date, "%m"),
     "&year=", format(date, "%y"), "&per_page=1"
   )
 

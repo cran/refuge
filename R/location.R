@@ -14,11 +14,10 @@
 #' @export
 #'
 #' @examples
-#' \donttest{
-#' 
+#' \dontrun{
 #' c <- rfg_location(lat = 39, lng = -75)
 #' }
-#' 
+#'
 rfg_location <- function(lat, lng, accessible = FALSE,
                          unisex = FALSE, verbose = TRUE, tidy = FALSE) {
   if (missing(lat) || missing(lng)) {
@@ -27,15 +26,10 @@ rfg_location <- function(lat, lng, accessible = FALSE,
     )
   }
 
-  ada_query <- ada_function(accessible)
-
-  unisex_query <- unisex_function(unisex)
-
-  coords <- paste0("lat=", lat, "&lng=", lng, "&")
+  ada_uni <- ada_uni_function(accessible, unisex)
 
   query <- paste0(
-    base_url, "/by_location.json?", coords, ada_query,
-    unisex_query, "per_page=1"
+    base_url, "/by_location.json?lat=", lat, "&lng=", lng, ada_uni, "&per_page=1"
   )
 
   df <- query_looper(query, verbose, tidy)

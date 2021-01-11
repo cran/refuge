@@ -4,8 +4,14 @@
 \alias{rfg_date}
 \title{Bathrooms by dates}
 \usage{
-rfg_date(date = NULL, accessible = FALSE, unisex = FALSE,
-  updated = FALSE, verbose = TRUE, tidy = FALSE)
+rfg_date(
+  date = NULL,
+  accessible = FALSE,
+  unisex = FALSE,
+  updated = FALSE,
+  verbose = TRUE,
+  tidy = FALSE
+)
 }
 \arguments{
 \item{date}{A date in "yyyy-mm-dd" format, or any format that can be
@@ -38,8 +44,7 @@ Requests all records on bathrooms created or updated on or after a
 given date.
 }
 \examples{
-\donttest{
-
+\dontrun{
 q <- rfg_date("2017-11-04")
 }
 

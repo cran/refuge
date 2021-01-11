@@ -1,5 +1,5 @@
 Package: refuge
-Version: 0.3.2
+Version: 0.3.3
 Title: Locate Trans and Intersex-Friendly Toilets
 Description: Access the 'Refuge' API, a web-application for locating trans and 
     intersex-friendly restrooms, including unisex and accessible restrooms. 
@@ -15,15 +15,14 @@ Encoding: UTF-8
 LazyData: true
 ByteCompile: true
 Imports: jsonlite, tibble, dplyr, httr
-RoxygenNote: 6.1.1
+RoxygenNote: 7.1.1
 URL: https://docs.evanodell.com/refuge
 BugReports: https://github.com/evanodell/refuge/issues
-Suggests: covr, testthat, knitr, rmarkdown, ggplot2, magrittr, viridis,
-        scales, usmap, stringi
+Suggests: covr, testthat, knitr, rmarkdown
 VignetteBuilder: knitr
 NeedsCompilation: no
-Packaged: 2018-12-03 19:54:29 UTC; evanodell
+Packaged: 2021-01-11 18:19:25 UTC; evanodell
 Author: Evan Odell [aut, cre] (<https://orcid.org/0000-0003-1845-808X>)
 Maintainer: Evan Odell <evanodell91@gmail.com>
 Repository: CRAN
-Date/Publication: 2018-12-03 22:00:03 UTC
+Date/Publication: 2021-01-11 19:00:02 UTC

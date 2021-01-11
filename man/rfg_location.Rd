@@ -4,8 +4,14 @@
 \alias{rfg_location}
 \title{Bathroom locations}
 \usage{
-rfg_location(lat, lng, accessible = FALSE, unisex = FALSE,
-  verbose = TRUE, tidy = FALSE)
+rfg_location(
+  lat,
+  lng,
+  accessible = FALSE,
+  unisex = FALSE,
+  verbose = TRUE,
+  tidy = FALSE
+)
 }
 \arguments{
 \item{lat}{Location latitude}
@@ -34,8 +40,7 @@ Given a pair of coordinates (latitude and longitude), finds any nearby
 bathrooms, subject to other parameters.
 }
 \examples{
-\donttest{
-
+\dontrun{
 c <- rfg_location(lat = 39, lng = -75)
 }
 
